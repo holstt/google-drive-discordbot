@@ -1,5 +1,5 @@
 # GoogleDriveService
-RESTful webservice providing convenient methods to search, list and create documents in Google Drive. 
+RESTful webservice providing convenient methods to search, list and create documents in Google Drive. Has built-in attendance registration using Google Sheets as well. 
 
 ## About
 
@@ -16,3 +16,19 @@ A brief overview of the layers:
 **Controller**: Recieves incoming requests which are then delegated to **Core**. The result from Core is returned to the client.
 
 **Infrastructure**: Handles communication with external web services (Google API). No data persistence. 
+
+## Getting Started
+
+Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in /Secrets
+
+Either run the project natively or use the provided Dockerfile.
+
+> TODO: 
+> - Using own Google API credentials + how to get these.
+> - Native + Docker command
+
+
+## Usage 
+
+> TODO:
+> - Insert screenshot, demo gif, code examples... 
