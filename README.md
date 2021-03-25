@@ -5,7 +5,7 @@ RESTful webservice providing convenient methods to search, list and create docum
 
 The internal architecture is based on the MVC-pattern following the principles from Domain-Driven Design (DDD). 
 
-The GoogleDriveService can be used independently but is also part of the [DiscordBot](https://github.com/roedebaron/DiscordBot) microservice architecture which enables the user to implicitly call the webservice using Discord commands.
+The GoogleDriveService can be used independently but is also part of the [DiscordBot](https://github.com/roedebaron/DiscordBot) microservice architecture which enables the user to conveniently call the webservice using Discord commands.
 
 A brief overview of the layers: 
 
