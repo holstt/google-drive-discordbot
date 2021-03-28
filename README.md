@@ -19,6 +19,8 @@ A brief overview of the layers:
 
 ## Getting Started
 
+Using Google's APIs requires a Google Cloud Platform (GCP) account. You might want to familiarize yourself with the resepective API quotas before getting started.
+
 Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in /Secrets
 
 Either run the project natively or use the provided Dockerfile.
@@ -26,7 +28,6 @@ Either run the project natively or use the provided Dockerfile.
 > TODO: 
 > - Using own Google API credentials + how to get these.
 > - Native + Docker command
-
 
 ## Usage 
 
@@ -38,11 +39,11 @@ Either run the project natively or use the provided Dockerfile.
 ### Attendance registration
 
 Registrering attendance requires that: 
-- The Google account subscribes to the Google Sheets API
-- An url to a Sheet where the Google account has editor access
-- The Sheet complies with certain rules in order for the GoogleDriveService to insert/register the attendance correctly in the Sheet. Please see [INSERT REF]
+- THe Google Sheets API is enabled for your GCP service account.
+- An url to a spreadsheet where the GCP account has _editor_ access. As such, you have to ensure that the spreadsheet is shared with the email of the account.   
+- The sheet complies with certain rules in order for the GoogleDriveService to insert/register the attendance correctly in the sheet. It is possible to have a compliant sheet created for you from a template, by simply providing an id on a completely empty sheet at the first attendance request. Then the service will create an attendance sheet and register the attendance. attendance ready-made 
 
-To register attendance call the endpoint `sheet/attendance-updates` with a json object containing the sheet id and attendees with their presence status and an optional message: 
+To register attendance call the endpoint `sheet/attendance-updates` with a json object containing the spreadsheet id and attendees with their presence status and an optional message. If the spreadsheet contains multiple tabs (sheets), and the attendance is **not** on the first tab, then the sheetId should always be specified.
 
 ```JSONC
 {
@@ -63,14 +64,13 @@ To register attendance call the endpoint `sheet/attendance-updates` with a json 
   ],
   "id": {
     "spreadSheetId": "DwaypOAqJclqPmSlWgPAfgxMjaYhLxJDDtyabvaDTIUHqhoc65",
-    "sheetId": 123456789
+    "sheetId": 123456789 // Optional. Defaults to the first sheet/tab of the specified spreadsheet.
   }
 }
 ```
 
 > TODO:
 > - Insert screenshot, demo gif, code examples... 
-> 
 
 
 
