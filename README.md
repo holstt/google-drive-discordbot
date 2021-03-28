@@ -44,21 +44,21 @@ Registrering attendance requires that:
 
 To register attendance call the endpoint `sheet/attendance-updates` with a json object containing the sheet id and attendees with their presence status and an optional message: 
 
-```JSON
+```JSONC
 {
   "attendees": [
     {
       "name": "Person1",
-      "presence": "Present" <---------------- Or use integer 0
+      "presence": "Present" //  Or use integer 0
     },
         {
       "name": "Person2",
-      "presence": "Late" <------------------- Or use integer 1
+      "presence": "Late" // Or use integer 1
     },
         {
       "name": "Person3",
-      "presence": "Absent", <---------------- Or use integer 2
-      "attendancemessage" : "On vacation" <-- Optional attendance message
+      "presence": "Absent", // Or use integer 2
+      "attendancemessage" : "On vacation" // Optional attendance message
     }
   ],
   "id": {
