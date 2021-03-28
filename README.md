@@ -30,5 +30,24 @@ Either run the project natively or use the provided Dockerfile.
 
 ## Usage 
 
+
+
+### Attendance registration
+
+Registrering attendance requires that: 
+- The Google account subscribes to the Google Sheets API
+- An url to a Sheet where the Google account has editor access
+- The Sheet complies with certain rules in order for the GoogleDriveService to insert/register the attendance correctly in the Sheet
+
+To register attendance call the endpoint sheet/attendance-updates with the following json input:
+
+
+
 > TODO:
 > - Insert screenshot, demo gif, code examples... 
+> 
+
+
+
+
+
