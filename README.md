@@ -31,12 +31,13 @@ Either run the project natively or use the provided Dockerfile.
 
 ## Usage 
 
-### Google Drive requests
+### Drive - Queries
 
 
 
 
-### Attendance registration
+
+### Sheets - Attendance registration
 
 Registrering attendance requires that: 
 - THe Google Sheets API is enabled for your GCP service account.
