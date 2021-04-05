@@ -31,6 +31,12 @@ Either run the project natively or use the provided Dockerfile.
 > - Using own Google API credentials + how to get these.
 > - Native + Docker command
 
+
+1. `git clone https://github.com/roedebaron/google-drive-service.git`
+2. `cd google-drive-service/GoogleDriveService.Api`
+3. `dotnet run`
+
+
 ## Usage 
 
 ### Drive - Queries
