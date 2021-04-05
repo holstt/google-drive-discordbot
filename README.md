@@ -41,7 +41,6 @@ Either run the project natively or use the provided Dockerfile.
 
 > TODO: 
 > - Using own Google API credentials + how to get these.
-> - Native + Docker command
 
 ## Usage 
 
