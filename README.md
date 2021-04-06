@@ -27,7 +27,7 @@ Using Google's APIs requires a Google Cloud Platform (GCP) account. You might wa
 
 Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in /Secrets
 
-Either run the project natively or use the provided Dockerfile.
+Either run the project natively or use the provided Dockerfile to run it in Docker.
 
 #### Native
 1. `git clone https://github.com/roedebaron/google-drive-service.git`
@@ -35,7 +35,7 @@ Either run the project natively or use the provided Dockerfile.
 3. Run `dotnet run` to download dependencies, build and run the service. 
 4. If no other port has been specified in the configuration, the service is now running on port 5000. 
 
-#### Docker
+#### Using Docker 🐳
 1. `git clone https://github.com/roedebaron/google-drive-service.git`
 2. `cd google-drive-service`
 3. Run `docker build -t drive-service .` to build the image with name `drive-service`
