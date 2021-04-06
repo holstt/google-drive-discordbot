@@ -42,9 +42,14 @@ Either run the project natively or use the provided Dockerfile.
 4. Run `docker run -dp 5000:5000 drive-service ` to start a container from the image. This will map your local port (e.g. 5000) to the port that the service is listening on (default is 5000). 
 
 > TODO: 
-> - Using own Google API credentials + how to get these.
+> - Using your own Google API credentials + how to get these.
 
-## Usage 
+## Usage
+
+Go to `/swagger/v1/swagger.json` to get an overview and try out all the endpoints.
+
+> TODO: 
+> - Document swagger endpoint
 
 ### Drive - Queries
 
