@@ -1,4 +1,4 @@
-# Google Drive Service <img src="https://toppng.com/uploads/preview/google-drive-logo-vector-11573914012sfqbx9t2sp.png" alt="Alt text" width="50">
+# Google Drive Service <img src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo.png" alt="Alt text" width="50">
 
 
 ![dotnet](https://img.shields.io/badge/asp--net--core-v3.1-blue)
