@@ -4,6 +4,8 @@
 ![dotnet](https://img.shields.io/badge/asp--net--core-v3.1-blue)
 ![dotnet](https://img.shields.io/badge/google--api--drive-v3-blue)
 ![dotnet](https://img.shields.io/badge/google--api--sheets-v4-blue)
+![csharp](https://img.shields.io/badge/C%23-8-blue)
+![ide](https://img.shields.io/badge/IDE-vs2019-blue)
 
 RESTful webservice providing convenient methods to search, list and create documents in Google Drive. Has built-in attendance registration using Google Sheets as well. 
 
@@ -94,3 +96,13 @@ To register attendance call the endpoint `sheet/attendance-updates` with a json 
 
 > TODO:
 > - Insert screenshot, demo gif, code examples... 
+>
+
+## Project TODO
+- [ ] Push code to repo
+- [ ] Migrate to .NET 5/C#9
+
+## Disclaimer
+
+
+
