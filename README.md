@@ -29,37 +29,38 @@ A brief overview of the layers:
 
 Using Google's APIs requires a Google Cloud Platform (GCP) account. You might want to familiarize yourself with the resepective API quotas before getting started.
 
-Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in /Secrets
 
-Either run the project natively or use the provided Dockerfile to run it in Docker.
+#### Configuration
+
+Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in the the folder `GoogleDriveService.Infrastructure/Secrets`.
+
+#### Running the bot
+
+Either run the project from source or use the provided `docker-compose.yml` file to run it via Docker Compose (recomended).  
 
 Clone the project: 
-1. `git clone https://github.com/roedebaron/aau-schedule-scraping.git`
-2. `cd aau-schedule-scraping/AauScheduleScraping.Api`
+1. `git clone https://github.com/roedebaron/google-drive-service.git`
 
-#### Native
-3. Run `dotnet run`. This will automatically download all dependencies, build the project and then run the service. 
-4. If no other port has been specified in the configuration, the service is now running on port 5000. 
+#### Running from source
+2. Run `dotnet run --project GoogleDriveService.Api`. This will automatically download all dependencies, build the project and then run the service. 
+3. If no other port has been specified in the configuration, the service is now running on port 5000. 
 
 
-#### Using Docker 🐳
-3. Run `docker build -t drive-service .` to build the image with name `drive-service`
-4. Run `docker run -dp 5000:5000 drive-service ` to start a container from the image. This will map your local port (e.g. 5000) to the port that the service is listening on (default is 5000). 
+#### Running with Docker Compose 🐳
+2. Examine the configuration in the `docker-compose.yml` file. Change the host port in the port mapping to your preference or leave as is. 
+3. Run `docker-compose up` in the root folder to build and run the service.
 
 > TODO: 
 > - Using your own Google API credentials + how to get these.
 
 ## Usage
 
-Go to `/swagger/v1/swagger.json` to get an overview and try out all the endpoints.
+Go to `localhost:[PORT]/swagger/v1/swagger.json` to get an overview and try out all the endpoints.
 
 > TODO: 
 > - Document swagger endpoint
 
 ### Drive - Queries
-
-
-
 
 
 ### Sheets - Attendance registration
@@ -102,6 +103,7 @@ To register attendance call the endpoint `sheet/attendance-updates` with a json 
 ## Project TODO
 - [ ] Push code to repo
 - [ ] Migrate to .NET 5/C#9
+- [ ] Discord bot integration
 
 ## Disclaimer
 
