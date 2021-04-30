@@ -32,7 +32,7 @@ Using Google's APIs requires a Google Cloud Platform (GCP) account. You might wa
 
 #### Configuration
 
-Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in the the folder `GoogleDriveService.Infrastructure/Secrets`.
+Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in the folder `GoogleDriveService.Infrastructure/Secrets`.
 
 #### Running the bot
 
@@ -66,7 +66,7 @@ Go to `localhost:[PORT]/swagger/v1/swagger.json` to get an overview and try out 
 ### Sheets - Attendance registration
 
 Registrering attendance requires that: 
-- THe Google Sheets API is enabled for your GCP service account.
+- The Google Sheets API is enabled for your GCP service account.
 - An url to a spreadsheet where the GCP account has _editor_ access. As such, you have to ensure that the spreadsheet is shared with the email of the account.   
 - The sheet complies with certain rules in order for the GoogleDriveService to insert/register the attendance correctly in the sheet. It is possible to have a compliant sheet created for you from a template, by simply providing an id on a completely empty sheet at the first attendance request. Then the service will create an attendance sheet and register the attendance. attendance ready-made 
 
