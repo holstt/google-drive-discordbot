@@ -1,21 +1,23 @@
-# Google Drive Service <img src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo.png" alt="Alt text" width="50">
+# Google Drive Discord Bot <img src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo.png" alt="Alt text" width="50">
 
 
 ![dotnet](https://img.shields.io/badge/asp--net--core-v3.1-blue)
-![dotnet](https://img.shields.io/badge/google--api--drive-v3-blue)
-![dotnet](https://img.shields.io/badge/google--api--sheets-v4-blue)
-![csharp](https://img.shields.io/badge/C%23-8-blue)
-![ide](https://img.shields.io/badge/IDE-vs2019-blue)
+![dotnet](https://img.shields.io/badge/google--api--drive-v3-green)
+![dotnet](https://img.shields.io/badge/google--api--sheets-v4-green)
+![csharp](https://img.shields.io/badge/C%23-8-purple)
+![ide](https://img.shields.io/badge/IDE-vs2019-purple)
 
-RESTful webservice providing convenient methods to search, list and create documents in Google Drive. Has built-in attendance registration using Google Sheets as well. 
+Discord bot providing convenient methods to search, list and create documents in Google Drive. Has built-in attendance registration using Google Sheets as well.
 
 ## About
 
+The Discord bot is developed using a microservice architecture, but the google-drive-service can also be used independently. 
+
+#### Microservice: google-drive-service
+
 The internal architecture is based on the MVC-pattern following the principles from Domain-Driven Design (DDD). 
 
-The GoogleDriveService can be used independently but is also part of the [DiscordBot](https://github.com/roedebaron/DiscordBot) microservice architecture which enables the user to conveniently call the webservice using Discord commands.
-
-A brief overview of the layers: 
+A brief overview of the layers:
 
 **Core**: Business logic. Represents domain objects and services. 
 
@@ -25,6 +27,11 @@ A brief overview of the layers:
 
 **Infrastructure**: Handles communication with external web services (Google API). No data persistence. 
 
+#### Microservice: discordbot
+
+....
+
+
 ## Getting Started
 
 Using Google's APIs requires a Google Cloud Platform (GCP) account. You might want to familiarize yourself with the resepective API quotas before getting started.
@@ -32,11 +39,11 @@ Using Google's APIs requires a Google Cloud Platform (GCP) account. You might wa
 
 #### Configuration
 
-Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in the folder `GoogleDriveService.Infrastructure/Secrets`.
+Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in the folder `google-drive-service/GoogleDriveService.Infrastructure/Secrets`.
 
 #### Running the bot
 
-Either run the project from source or use the provided `docker-compose.yml` file to run it via Docker Compose (recomended).  
+Either run the services from source or use the provided `docker-compose.yml` file to run it via Docker Compose (recomended).  
 
 Clone the project: 
 1. `git clone https://github.com/roedebaron/google-drive-service.git`
