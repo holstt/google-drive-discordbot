@@ -37,11 +37,11 @@ A brief overview of the layers:
 Using Google's APIs requires a Google Cloud Platform (GCP) account. You might want to familiarize yourself with the resepective API quotas before getting started.
 
 
-#### Configuration
+### Configuration
 
 Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in the folder `google-drive-service/GoogleDriveService.Infrastructure/Secrets`.
 
-#### Running the bot
+### Running the bot
 
 Either run the services from source or use the provided `docker-compose.yml` file to run it via Docker Compose (recomended).  
 
