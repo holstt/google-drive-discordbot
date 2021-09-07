@@ -7,13 +7,15 @@
 ![csharp](https://img.shields.io/badge/C%23-8-purple)
 ![ide](https://img.shields.io/badge/IDE-vs2019-purple)
 
-Discord bot providing convenient methods to search, list and create documents in Google Drive. Has built-in attendance registration using Google Sheets as well.
+Discord bot providing commands to create and query documents in Google Drive. Extra features includes attendance registration and calendar creation using Google Sheets.
 
 ## About
 
-The Discord bot is developed using a microservice architecture, but the google-drive-service can also be used independently. 
+The Discord bot is developed using a microservice architecture, but the google-drive-service can also be used independently as a REST API instead of the Discord client. 
 
-#### Microservice: google-drive-service
+### Microservice: google-drive-service
+
+RESTful web service responsible for communicating with Google Drive API. 
 
 The internal architecture is based on the MVC-pattern following the principles from Domain-Driven Design (DDD). 
 
@@ -23,52 +25,19 @@ A brief overview of the layers:
 
 **View**: I/A
 
-**Controller**: Recieves incoming requests which are then delegated to **Core**. The result from Core is returned to the client.
+**Controller**: Recieves incoming requests which are delegated to **Core**. The result from Core is returned to the client.
 
 **Infrastructure**: Handles communication with external web services (Google API). No data persistence. 
 
-#### Microservice: discordbot
+#### Standalone usage
 
-....
-
-
-## Getting Started
-
-Using Google's APIs requires a Google Cloud Platform (GCP) account. You might want to familiarize yourself with the resepective API quotas before getting started.
+> TODO:
+> - Maybe ref to standalone readme...
 
 
-### Configuration
-
-Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in the folder `google-drive-service/GoogleDriveService.Infrastructure/Secrets`.
-
-### Running the bot
-
-Either run the services from source or use the provided `docker-compose.yml` file to run it via Docker Compose (recomended).  
-
-Clone the project: 
-1. `git clone https://github.com/roedebaron/google-drive-service.git`
-
-#### Running from source
-2. Run `dotnet run --project GoogleDriveService.Api`. This will automatically download all dependencies, build the project and then run the service. 
-3. If no other port has been specified in the configuration, the service is now running on port 5000. 
-
-
-#### Running with Docker Compose 🐳
-2. Examine the configuration in the `docker-compose.yml` file. Change the host port in the port mapping to your preference or leave as is. 
-3. Run `docker-compose up` in the root folder to build and run the service.
-
-> TODO: 
-> - Using your own Google API credentials + how to get these.
-
-## Usage
-
-Go to `localhost:[PORT]/swagger/v1/swagger.json` to get an overview and try out all the endpoints.
-
-> TODO: 
-> - Document swagger endpoint
+Go to `localhost:[PORT]/swagger/v1/swagger.json` to get an overview of the endpoints.
 
 ### Drive - Queries
-
 
 ### Sheets - Attendance registration
 
@@ -103,9 +72,43 @@ To register attendance call the endpoint `sheet/attendance-updates` with a json 
 }
 ```
 
+
+### Microservice: discordbot
+
+Responsible for handling commands recieved from the Discord client. 
+
+## Getting Started
+
+Using Google's APIs requires a Google Cloud Platform (GCP) account. You might want to familiarize yourself with the respective API quotas before getting started.
+
+### Configuration
+
+Obtain Google credentials (json-file) for the Google Drive API and Google Sheets API and place the file in the folder `google-drive-service/GoogleDriveService.Infrastructure/Secrets`.
+
+### Running the bot
+
+Either run the services from source or use the provided `docker-compose.yml` file to run it via Docker Compose (recomended).  
+
+Clone the project: 
+1. `git clone https://github.com/roedebaron/google-drive-service.git`
+
+#### Running from source
+2. Run `dotnet run --project GoogleDriveService.Api`. This will automatically download all dependencies, build the project and then run the service. 
+3. If no other port has been specified in the configuration, the service is now running on port 5000. 
+
+
+#### Running with Docker Compose 🐳
+2. Examine the configuration in the `docker-compose.yml` file. Change the host port in the port mapping to your preference or leave as is. 
+3. Run `docker-compose up` in the root folder to build and run the service.
+
+> TODO: 
+> - Using your own Google API credentials + how to get these.
+
+### Usage
+
 > TODO:
-> - Insert screenshot, demo gif, code examples... 
->
+> - Insert screenshot, demo gif of commands...
+
 
 ## Project TODO
 - [ ] Push code to repo
