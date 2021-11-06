@@ -29,18 +29,17 @@ The bot references the TemplateBot --INSERT LINK
 
 `!attendance all vc` - Register attendance setting all users in a voice channel as Present
 
-`!attendance all but <user_mentions_not_present>` - Register attendance setting all users as present except for the specified users
-- Example: `!attendance all but @JohnDoe, @DoeJohn, @JohnJohn`
+`!attendance all but <user_mention1>, <user_mention2>, ...` - Register attendance setting all users as present except for the specified users
+- Example usage: `!attendance all but @JohnDoe, @DoeJohn, @JohnJohn`
 
 `!attendance <attendance_registration_time>` - Set time for attendance registration for all users in a voice channel
-- Time should be in format `hh:mm`, eg. `!attend 09:45`
+- Time must be a later time that day and in format `hh:mm`
+- Example usage:`!attend 09:45`
 
-`!attendance breakfast` - Register breakfast reminder in attendance sheet for a user
-
+`!attendance breakfast <user_mention>` - Register breakfast reminder in attendance sheet for a user
 
 
 --INSERT IMAGES OF EXAMPLE COMMANDS
-
 
 
 ### Microservice: google-drive-service
