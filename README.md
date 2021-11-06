@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100" src="https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Circle-768x768.png">  
-  <img width="170" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo.png">
+  <img width="170" src="https://www.freeiconspng.com/thumbs/sound-png/audio-sound-waves-png-7.png">
 </p>
 
 
@@ -122,13 +122,14 @@ Obtain Google credentials (json-file) for the Google Drive API and Google Sheets
 
 Either run the services from source or use the provided `docker-compose.yml` file to run it via Docker Compose (recommended).  
 
-Create a root folder and clone this project and the dependent project : 
-1. `git clone https://github.com/roedebaron/google-drive-service.git`
+Create a root folder and clone this project and the [discord-bot-template](https://github.com/roedebaron/microservice-discord-bot-template) project dependency: 
+1. `mkdir my-discord-bot`
+2. `git clone https://github.com/roedebaron/google-drive-service.git`
+3. `git clone https://github.com/roedebaron/microservice-discord-bot-template`
 
 #### Running from source
 2. Run `dotnet run --project GoogleDriveService.Api`. This will automatically download all dependencies, build the project and then run the service. 
 3. If no other port has been specified in the configuration, the service is now running on port 5000. 
-
 
 
 #### Running with Docker Compose 🐳
