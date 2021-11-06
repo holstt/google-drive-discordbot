@@ -1,13 +1,21 @@
-# Google Drive Discord Bot <img src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo.png" alt="Alt text" width="50">
+<p align="center">
+  <img width="100" src="https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Circle-768x768.png">  
+  <img width="170" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo.png">
+</p>
 
 
-![dotnet](https://img.shields.io/badge/asp--net--core-v3.1-blue)
-![dotnet](https://img.shields.io/badge/google--api--drive-v3-green)
-![dotnet](https://img.shields.io/badge/google--api--sheets-v4-green)
-![csharp](https://img.shields.io/badge/C%23-8-purple)
-![ide](https://img.shields.io/badge/IDE-vs2019-purple)
+<h1 align="center">Google Drive Discord Bot</h1>
 
-Discord bot providing commands to create and query documents in Google Drive. Extra features includes attendance registration and calendar creation using Google Sheets.
+<p align="center">
+  <img src="https://img.shields.io/badge/C%23-8.0-blue" alt="csharp" style="max-width:100%;"> 
+  <img src="https://img.shields.io/badge/.NET Core-3.1-blue" alt="dotnet" style="max-width:100%;"> 
+  <img src="https://img.shields.io/badge/discord--net--labs-v3.1.7-blue" alt="discord-net" style="max-width:100%;">
+  <img src="https://img.shields.io/badge/google--api--drive-v3-green" alt="drive" style="max-width:100%;"> 
+  <img src="https://img.shields.io/badge/google--api--sheets-v4-green" alt="sheets" style="max-width:100%;"> 
+  <img src="https://img.shields.io/badge/IDE-VS2019-purple" alt="ide" style="max-width:100%;">
+</p>
+
+Dockerized Discord bot providing commands to create and query documents in Google Drive. Extra features include attendance registration and calendar creation using Google Sheets.
 
 ## About
 
@@ -75,7 +83,7 @@ Registrering attendance requires that:
 - An url to a spreadsheet where the GCP account has _editor_ access. As such, you have to ensure that the spreadsheet is shared with the email of the account.   
 - The sheet complies with certain rules in order for the GoogleDriveService to insert/register the attendance correctly in the sheet. It is possible to have a compliant sheet created for you from a template, by simply providing an id on a completely empty sheet at the first attendance request. Then the service will create an attendance sheet and register the attendance. attendance ready-made 
 
-To register attendance call the endpoint `sheet/attendance-updates` with a json object containing the spreadsheet id and attendees with their presence status and an optional message. If the spreadsheet contains multiple tabs (sheets), and the attendance is **not** on the first tab, then the sheetId should always be specified.
+To register attendance call the endpoint `sheet/attendance-updates` with a json object containing the spreadsheet id and attendees with their presence status and an optional message. If the spreadsheet contains multiple tabs (sheets), and the attendance is **not** on the first tab, then the sheetId must be specified.
 
 ```JSONC
 {
@@ -102,8 +110,6 @@ To register attendance call the endpoint `sheet/attendance-updates` with a json 
 ```
 
 
-
-
 ## Getting Started
 
 Using Google's APIs requires a Google Cloud Platform (GCP) account. You might want to familiarize yourself with the respective API quotas before getting started.
@@ -114,9 +120,9 @@ Obtain Google credentials (json-file) for the Google Drive API and Google Sheets
 
 ### Running the bot
 
-Either run the services from source or use the provided `docker-compose.yml` file to run it via Docker Compose (recomended).  
+Either run the services from source or use the provided `docker-compose.yml` file to run it via Docker Compose (recommended).  
 
-Clone the project: 
+Create a root folder and clone this project and the dependent project : 
 1. `git clone https://github.com/roedebaron/google-drive-service.git`
 
 #### Running from source
@@ -124,8 +130,9 @@ Clone the project:
 3. If no other port has been specified in the configuration, the service is now running on port 5000. 
 
 
+
 #### Running with Docker Compose 🐳
-2. Examine the configuration in the `docker-compose.yml` file. Change the host port in the port mapping to your preference or leave as is. 
+2. Examine the configuration in the `docker-compose.yml` file. Change the Docker host port in the port mapping to your preference or leave as is. 
 3. Run `docker-compose up` in the root folder to build and run the service.
 
 > TODO: 
@@ -139,8 +146,8 @@ Clone the project:
 
 ## Project TODO
 - [ ] Push code to repo
-- [ ] Migrate to .NET 5/C#9
-- [ ] Discord bot integration
+- [ ] Better error handling
+- [ ] Migrate to .NET 6/C#10 if possible
 
 ## Disclaimer
 
