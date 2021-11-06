@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100" src="https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Circle-768x768.png">  
-  <img width="170" src="https://www.freeiconspng.com/thumbs/sound-png/audio-sound-waves-png-7.png">
+  <img width="170" src="https://logos-world.net/wp-content/uploads/2020/11/Google-Drive-Logo.png">
 </p>
 
 
