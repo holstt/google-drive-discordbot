@@ -19,9 +19,11 @@ Dockerized Discord bot providing commands to create and query documents in Googl
 
 ## About
 
-The Discord bot is developed using a microservice architecture, but the google-drive-service can also be used independently as a REST API instead of through the Discord GUI/google-drive-bot.
+The Discord bot is developed using a microservice architecture, where the discord bot (google-drive-bot) is decoupled from the the service communicating with Goolge Drive (google-drive-service). As such, it is possible to use the drive service directly as a REST API and integrate this functionality with another service than Discord.
 
-### Microservice: google-drive-bot
+NB: A Google Cloud Platform (GCP) account is required in order to obtain an API key for the Google services used in this project.
+
+### Discord bot: google-drive-bot
 
 Responsible for handling commands recieved from the Discord GUI client.
 
@@ -31,40 +33,32 @@ The bot references the TemplateBot --INSERT LINK
 
 ##### Attendance registration
 
-`!attendance` - Display attendance information for this guild
-
-`!attendance all` - Register attendance setting all users as Present
-
-`!attendance all vc` - Register attendance setting all users in a voice channel as Present
-
-`!attendance all but <user_mention1>, <user_mention2>, ...` - Register attendance setting all users as present except for the specified users
-- Example usage: `!attendance all but @JohnDoe, @DoeJohn, @JohnJohn`
-
-`!attendance <attendance_registration_time>` - Set time for attendance registration for all users in a voice channel
-- Time must be a later time that day and in format `hh:mm`
-- Example usage:`!attend 09:45`
-
-`!attendance breakfast <user_mention>` - Register breakfast reminder in attendance sheet for a user
+|Command Name |Description|
+|-----|--------|
+|`!attendance`|Display attendance information for this guild      |
+|`!attendance all`  |Register attendance setting all users as Present      |
+|`!attendance all vc`  |Register attendance setting all users in **a voice channel** as Present      |
+| `!attendance all but <user_mention1>, <user_mention2>, ...`| Register attendance setting all users as present except for the specified users <br/><br/>Example usage: `!attendance all but @JohnDoe, @DoeJohn, @JohnJohn`|
+|`!attendance <attendance_registration_time>` | Set time for attendance registration for all users in a voice channel. Time must be in the future and in format `hh:mm` <br/><br/> Example usage:`!attend 09:45`|
+| `!attendance breakfast <user_mention>` | Register breakfast reminder for being late in attendance sheet for the specified user |
 
 
 --INSERT IMAGES OF EXAMPLE COMMANDS
 
 
-### Microservice: google-drive-service
+### Rest API: google-drive-service
 
-RESTful web service responsible for communicating with Google Drive API. 
+RESTful web service responsible for communicating with the [Google Drive API](https://developers.google.com/drive/api). 
 
-The internal architecture is based on the MVC-pattern following the principles from Domain-Driven Design (DDD). 
+The internal architecture is based on the MVC-pattern following the principles from Domain-Driven Design (DDD):
 
-A brief overview of the layers:
+- **Core**: Business logic. Represents domain objects and services. 
 
-**Core**: Business logic. Represents domain objects and services. 
-
-**View**: I/A
+- **View**: I/A
 
 **Controller**: Recieves incoming requests which are delegated to **Core**. The result from Core is returned to the client.
 
-**Infrastructure**: Handles communication with external web services (Google API). No data persistence. 
+**Infrastructure**: Handles communication with external web services (The Google API). No data persistence. 
 
 #### Standalone usage
 
@@ -74,16 +68,19 @@ A brief overview of the layers:
 
 Go to `localhost:[PORT]/swagger/v1/swagger.json` to get an overview of the endpoints.
 
-### Drive - Queries
+### Query files in Google Drive
 
-### Sheets - Attendance registration
+*Coming soon...*
+
+
+### Attendance registration in Google Sheets
 
 Registrering attendance requires that: 
 - The Google Sheets API is enabled for your GCP service account.
-- An url to a spreadsheet where the GCP account has _editor_ access. As such, you have to ensure that the spreadsheet is shared with the email of the account.   
-- The sheet complies with certain rules in order for the GoogleDriveService to insert/register the attendance correctly in the sheet. It is possible to have a compliant sheet created for you from a template, by simply providing an id on a completely empty sheet at the first attendance request. Then the service will create an attendance sheet and register the attendance. attendance ready-made 
+- An url to a spreadsheet where the GCP account has _editor_ access. That is, you have to share the spreadsheet with the email of the GCP account.   
+- The sheet complies with certain rules in order for the GoogleDriveService to parse and register the attendance correctly in the sheet. It is possible to have a compliant sheet created for you from a template by simply providing an id of a completely empty sheet at the first attendance request. The service will then build a default attendance sheet and register the attendance.
 
-To register attendance call the endpoint `sheet/attendance-updates` with a json object containing the spreadsheet id and attendees with their presence status and an optional message. If the spreadsheet contains multiple tabs (sheets), and the attendance is **not** on the first tab, then the sheetId must be specified.
+To register attendance call the endpoint `sheet/attendance-updates` with a json object containing the spreadsheet id and attendees with their presence status and an optional message. If the spreadsheet contains multiple tabs (aka. *sheets*), and the attendance is **not** on the first tab, then the *sheetId* must be specified.
 
 ```JSONC
 {
@@ -149,6 +146,7 @@ Create a root folder and clone this project and the [discord-bot-template](https
 - [ ] Push code to repo
 - [ ] Better error handling
 - [ ] Migrate to .NET 6/C#10 if possible
+- [ ] Insert arch diagram (bot --> service --> drive+sheets api)
 
 ## Disclaimer
 
